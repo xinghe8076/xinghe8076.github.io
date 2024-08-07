@@ -28,4 +28,105 @@ href="https://hexo.io/docs/generating.html">Generating</a></p>
 href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
 ]]></content>
   </entry>
+  <entry>
+    <title>test</title>
+    <url>/posts/test/</url>
+    <content><![CDATA[<h1 id="test">test</h1>
+<p>This is a test post.</p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    std::cout &lt;&lt; <span class="string">&quot;Hello, world!&quot;</span> &lt;&lt; std::endl;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>This is a code block.</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="built_in">print</span>(<span class="string">&quot;Hello, world!&quot;</span>)</span><br></pre></td></tr></table></figure>
+<p>This is a second code block.</p>
+<p><span class="math display">\[
+e^{i\pi}+1=0
+\]</span></p>
+<p>This is a math block.</p>
+<p><span class="math inline">\(e^{i\pi}+1=0\)</span></p>
+<p>This is a second math block.</p>
+<ul>
+<li>list item 1</li>
+<li>list item 2</li>
+<li>list item 3</li>
+</ul>
+<p>This is a list.</p>
+<p>This is a second list:</p>
+<ul>
+<li>item 1</li>
+<li>item 2</li>
+<li>item 3</li>
+</ul>
+<blockquote>
+<p>This is a blockquote. It can span multiple lines. It can also contain
+<code>code</code> and <span class="math inline">\(math\)</span>. It can
+also contain lists: - item 1 - item 2 - item 3</p>
+<p>And images: <img src="\images\avatar.jpg" /></p>
+<p>And links: <a href="https://github.com">GitHub</a> &gt; This is a
+nested blockquote. &gt; It can also contain <code>code</code> and <span
+class="math inline">\(math\)</span>.</p>
+</blockquote>
+<p>This is a horizontal rule:</p>
+<hr />
+<p>This is a table:</p>
+<table>
+<thead>
+<tr>
+<th>Column 1</th>
+<th>Column 2</th>
+<th>Column 3</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Value 1</td>
+<td>Value 2</td>
+<td>Value 3</td>
+</tr>
+<tr>
+<td>Value 4</td>
+<td>Value 5</td>
+<td>Value 6</td>
+</tr>
+<tr>
+<td>Value 7</td>
+<td>Value 8</td>
+<td>Value 9</td>
+</tr>
+</tbody>
+</table>
+<p>This is a second table:</p>
+<table>
+<thead>
+<tr>
+<th>Column 1</th>
+<th>Column 2</th>
+<th>Column 3</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Value 1</td>
+<td>Value 2</td>
+<td>Value 3</td>
+</tr>
+<tr>
+<td>Value 4</td>
+<td>Value 5</td>
+<td>Value 6</td>
+</tr>
+<tr>
+<td>Value 7</td>
+<td>Value 8</td>
+<td>Value 9</td>
+</tr>
+</tbody>
+</table>
+<p>done.</p>
+]]></content>
+      <categories>
+        <category>test</category>
+      </categories>
+      <tags>
+        <tag>test</tag>
+      </tags>
+  </entry>
 </search>
