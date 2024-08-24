@@ -1,6 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>目录</title>
+    <url>/posts/%E7%9B%AE%E5%BD%95/</url>
+    <content><![CDATA[<p>这里本来应该是目录的。</p>
+<p>但是因为没有正文，就咕咕咕了。</p>
+]]></content>
+      <categories>
+        <category>novel</category>
+        <category>catalogs</category>
+      </categories>
+      <tags>
+        <tag>novel</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>一种O(n log n)时间的整数乘法算法</title>
     <url>/posts/%E4%B8%80%E7%A7%8DO-n-log-n-%E6%97%B6%E9%97%B4%E7%9A%84%E6%95%B4%E6%95%B0%E4%B9%98%E6%B3%95%E7%AE%97%E6%B3%95/</url>
     <content><![CDATA[<h1 id="一种on-log-n时间的整数乘法算法">一种O(n log
@@ -26,26 +40,30 @@ Hoeven先是花了1.2.1和1.2.2两节讨论了如何把整数乘法从一维多�
 个相近的质数的乘积，然后用中国剩余定理把问题转化为一个 <span
 class="math inline">\(d\)</span> 元多项式环上的乘积：</p>
 <figure>
-<img src="%22\images\一种O(n-log-n)时间的整数乘法算法-1.png%22"
+<img
+src="https://xinghe8076.github.io/images/%E4%B8%80%E7%A7%8DO(n-log-n)%E6%97%B6%E9%97%B4%E7%9A%84%E6%95%B4%E6%95%B0%E4%B9%98%E6%B3%95%E7%AE%97%E6%B3%95-1.png"
 alt="1" />
 <figcaption aria-hidden="true">1</figcaption>
 </figure>
 <p>然后，注意到，对于一个多元多项式的环，如果每一个的次数都是2的幂，那么存在一种形式是可以有快速算法的：</p>
 <figure>
-<img src="%22\images\一种O(n-log-n)时间的整数乘法算法-2.png%22"
+<img
+src="https://xinghe8076.github.io/images/%E4%B8%80%E7%A7%8DO(n-log-n)%E6%97%B6%E9%97%B4%E7%9A%84%E6%95%B4%E6%95%B0%E4%B9%98%E6%B3%95%E7%AE%97%E6%B3%95-2.png"
 alt="2" />
 <figcaption aria-hidden="true">2</figcaption>
 </figure>
 <p>那么如何把一个次数为质数的多项式环上的乘法转化为次数为2的幂的多项式环上的乘法？本文着重介绍一种高效的算法，它的思想是“插值”，或者用文章中的话说，叫Gaussian
 Resampling，文章用下图描述其本质：</p>
 <figure>
-<img src="%22\images\一种O(n-log-n)时间的整数乘法算法-3.png%22"
+<img
+src="https://xinghe8076.github.io/images/%E4%B8%80%E7%A7%8DO(n-log-n)%E6%97%B6%E9%97%B4%E7%9A%84%E6%95%B4%E6%95%B0%E4%B9%98%E6%B3%95%E7%AE%97%E6%B3%95-3.png"
 alt="3" />
 <figcaption aria-hidden="true">3</figcaption>
 </figure>
 <p>随后，文章中插值的办法：</p>
 <figure>
-<img src="%22\images\一种O(n-log-n)时间的整数乘法算法-4.png%22"
+<img
+src="https://xinghe8076.github.io/images/%E4%B8%80%E7%A7%8DO(n-log-n)%E6%97%B6%E9%97%B4%E7%9A%84%E6%95%B4%E6%95%B0%E4%B9%98%E6%B3%95%E7%AE%97%E6%B3%95-4.png"
 alt="4" />
 <figcaption aria-hidden="true">4</figcaption>
 </figure>
@@ -84,20 +102,6 @@ complexity，新算法在加速的同时，还引入了不少额外的开销（�
         <tag>Algo</tag>
         <tag>math</tag>
         <tag>FFT</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>目录</title>
-    <url>/posts/%E7%9B%AE%E5%BD%95/</url>
-    <content><![CDATA[<p>这里本来应该是目录的。</p>
-<p>但是因为没有正文，就咕咕咕了。</p>
-]]></content>
-      <categories>
-        <category>novel</category>
-        <category>catalogs</category>
-      </categories>
-      <tags>
-        <tag>novel</tag>
       </tags>
   </entry>
 </search>
