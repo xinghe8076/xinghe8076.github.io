@@ -1,20 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>目录</title>
-    <url>/posts/%E7%9B%AE%E5%BD%95/</url>
-    <content><![CDATA[<p>这里本来应该是目录的。</p>
-<p>但是因为没有正文，就咕咕咕了。</p>
-]]></content>
-      <categories>
-        <category>novel</category>
-        <category>catalogs</category>
-      </categories>
-      <tags>
-        <tag>novel</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>一种O(n log n)时间的整数乘法算法</title>
     <url>/posts/%E4%B8%80%E7%A7%8DO-n-log-n-%E6%97%B6%E9%97%B4%E7%9A%84%E6%95%B4%E6%95%B0%E4%B9%98%E6%B3%95%E7%AE%97%E6%B3%95/</url>
     <content><![CDATA[<h1 id="一种on-log-n时间的整数乘法算法">一种O(n log
@@ -102,6 +88,20 @@ complexity，新算法在加速的同时，还引入了不少额外的开销（�
         <tag>Algo</tag>
         <tag>math</tag>
         <tag>FFT</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>目录</title>
+    <url>/posts/%E7%9B%AE%E5%BD%95/</url>
+    <content><![CDATA[<p>这里本来应该是目录的。</p>
+<p>但是因为没有正文，就咕咕咕了。</p>
+]]></content>
+      <categories>
+        <category>novel</category>
+        <category>catalogs</category>
+      </categories>
+      <tags>
+        <tag>novel</tag>
       </tags>
   </entry>
 </search>
