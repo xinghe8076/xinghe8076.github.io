@@ -1,6 +1,92 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>一种O(n log n)时间的整数乘法算法</title>
+    <url>/posts/%E4%B8%80%E7%A7%8DO-n-log-n-%E6%97%B6%E9%97%B4%E7%9A%84%E6%95%B4%E6%95%B0%E4%B9%98%E6%B3%95%E7%AE%97%E6%B3%95/</url>
+    <content><![CDATA[<h1 id="一种on-log-n时间的整数乘法算法">一种O(n log
+n)时间的整数乘法算法</h1>
+<h2 id="序">序</h2>
+<p>早在1971年，整数乘法的时间复杂度就已经被德国数学家推到 <span
+class="math inline">\(O(n \cdot \log n \cdot \log \log n)\)</span>
+了，也就是著名的Schönhage–Strassen算法，也是OI中常说的FFT。其基本原理是</p>
+<ol type="1">
+<li>对两个长度为n的大整数分别做一次环上的FFT，转换为频域分布。</li>
+<li>对两个整数的频域分布做pointwise
+multiplication，得到乘积的频域分布。</li>
+<li>对乘积的频域分布做一次环上的IFFT，由此得到乘积。</li>
+</ol>
+<p>而这次的新算法，是在原本的Schönhage–Strassen算法上做了一次改进。原本的算法是在一个一维的<strong>一元多项式环</strong>上完成的，两位大佬发现如果把问题转换到<strong>多元多项式环</strong>上面的话，同样的计算就可以更加高效地完成。</p>
+<p>于是在<a
+href="https://hal.science/hal-02070778/document">这篇论文</a>里，David
+Harvey和Joris van der
+Hoeven先是花了1.2.1和1.2.2两节讨论了如何把整数乘法从一维多项式环拓展到高维，然后在2、3、4节里讨论了高维多项式环的相关运算，最后第5节证了一个时间复杂度，圆满收工。</p>
+<h2 id="算法流程">算法流程</h2>
+<p>首先把一个稍大于 <span class="math inline">\(n\)</span> 的值写成
+<span class="math inline">\(d\)</span>
+个相近的质数的乘积，然后用中国剩余定理把问题转化为一个 <span
+class="math inline">\(d\)</span> 元多项式环上的乘积：</p>
+<figure>
+<img src="%22\images\一种O(n-log-n)时间的整数乘法算法-1.png%22"
+alt="1" />
+<figcaption aria-hidden="true">1</figcaption>
+</figure>
+<p>然后，注意到，对于一个多元多项式的环，如果每一个的次数都是2的幂，那么存在一种形式是可以有快速算法的：</p>
+<figure>
+<img src="%22\images\一种O(n-log-n)时间的整数乘法算法-2.png%22"
+alt="2" />
+<figcaption aria-hidden="true">2</figcaption>
+</figure>
+<p>那么如何把一个次数为质数的多项式环上的乘法转化为次数为2的幂的多项式环上的乘法？本文着重介绍一种高效的算法，它的思想是“插值”，或者用文章中的话说，叫Gaussian
+Resampling，文章用下图描述其本质：</p>
+<figure>
+<img src="%22\images\一种O(n-log-n)时间的整数乘法算法-3.png%22"
+alt="3" />
+<figcaption aria-hidden="true">3</figcaption>
+</figure>
+<p>随后，文章中插值的办法：</p>
+<figure>
+<img src="%22\images\一种O(n-log-n)时间的整数乘法算法-4.png%22"
+alt="4" />
+<figcaption aria-hidden="true">4</figcaption>
+</figure>
+<p>于是乎，计算次数为质数的DFT的思路就是：先把值通过Gaussian放到一个稍大的网格上，然后做DFT，再进行一个Gaussian采样的逆运算把结果解回来。</p>
+<p>余下的工作便是把上面每一步操作过程中的复杂度给算明白了。</p>
+<h2 id="时间复杂度分析">时间复杂度分析</h2>
+<p>文章分析出，在 <span class="math inline">\(n\ge n_0
+=2^{1729^{12}}\)</span> 时，复杂度才会收敛在 <span
+class="math inline">\(O(n\log n)\)</span>。</p>
+<h2 id="应用">应用</h2>
+<blockquote>
+<p>在这个算法之前，已经有不少Schönhage–Strassen算法的优化算法了，目前最快的时间复杂度是
+<span class="math inline">\(O(n \cdot \log n \cdot 4^{\log^*
+n})\)</span>。这个 <span class="math inline">\(4^{\log^* n}\)</span>
+是说哪怕你的整数长度为 <span
+class="math inline">\(n=10^{1000000}\)</span> 位， <span
+class="math inline">\(4^{\log^* n}\)</span> 也仅仅只有 <span
+class="math inline">\(256\)</span> 而已。</p>
+<p>而且使用Schönhage–Strassen算法时，因为对于 <span
+class="math inline">\(n\le2^{64}\)</span>，<span
+class="math inline">\(\log n\)</span> -bit的整数运算可以做到 <span
+class="math inline">\(O(1)\)</span>，因此Schönhage–Strassen算法在实际应用可以达到
+<span class="math inline">\(O(n\log n)\)</span>，且非常高效。</p>
+</blockquote>
+<p>但这篇文章讨论的是bit
+complexity，新算法在加速的同时，还引入了不少额外的开销（高维多项式环的转换、存取、计算等），使得其常数因子比原来的算法大很多。</p>
+<p>因此，这个算法目前还没有被广泛应用，但它的思想值得借鉴。</p>
+<p>个人认为：这无疑是科研上的一大步，但要想在实践中落地，还需要更多的研究与优化。</p>
+]]></content>
+      <categories>
+        <category>OI</category>
+        <category>杂谈</category>
+      </categories>
+      <tags>
+        <tag>OI</tag>
+        <tag>Algo</tag>
+        <tag>math</tag>
+        <tag>FFT</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>目录</title>
     <url>/posts/%E7%9B%AE%E5%BD%95/</url>
     <content><![CDATA[<p>这里本来应该是目录的。</p>
